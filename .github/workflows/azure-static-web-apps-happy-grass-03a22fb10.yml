@@ -1,5 +1,6 @@
 name: Azure Static Web Apps CI/CD
-
+env:
+  NODE_VERSION: 18.x
 on:
   push:
     branches:
@@ -19,14 +20,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-
-      - name: Install nvm
-        id: installnvm
-        run: yarn add nvm
-
-      - name: Node Version
-        id: nodeversion
-        run: nvm use
 
       - name: Build And Deploy
         id: builddeploy
